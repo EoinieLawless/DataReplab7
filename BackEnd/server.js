@@ -3,6 +3,17 @@ const app = express()
 const port = 4000
 var bodyParser = require('body-parser')
 
+// getting-started.js
+const mongoose = require('mongoose');
+
+main().catch(err => console.log(err));
+
+async function main() {
+  //await mongoose.connect('mongodb://localhost:27017/test');
+  
+  await mongoose.connect('mongodb+srv://eoin:lawless@cluster0.mrdwkoe.mongodb.net/?retryWrites=true&w=majority'); // if your database has auth enabled
+}
+
 // parse application/x-www-form-urlencoded
 app.use(bodyParser.urlencoded({ extended: false }))
 
